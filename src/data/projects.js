@@ -1,4 +1,9 @@
-export const projects = [
+const withBaseUrl = (path) => {
+  if (!path || path.startsWith('http') || path.startsWith(import.meta.env.BASE_URL)) return path
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+}
+
+const projectData = [
   {
     slug: 'glam-by-madhusa',
     title: 'Glam by Madhusa',
@@ -192,6 +197,13 @@ export const projects = [
     credits: [{ label: 'Role', value: 'Photographer' }]
   }
 ]
+
+export const projects = projectData.map((project) => ({
+  ...project,
+  image: withBaseUrl(project.image),
+  gallery: project.gallery.map(withBaseUrl),
+  landscapeGallery: project.landscapeGallery?.map(withBaseUrl)
+}))
 
 export const disciplines = [
   {

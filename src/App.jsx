@@ -61,23 +61,27 @@ function PortfolioShell() {
     if (isLoading) return undefined
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '[data-reveal]',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.1,
-          ease: 'power3.out',
-          stagger: 0.08,
-          scrollTrigger: {
-            trigger: '#root',
-            start: 'top 80%'
+      const revealTargets = gsap.utils.toArray('[data-reveal]')
+      if (revealTargets.length) {
+        gsap.fromTo(
+          revealTargets,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            ease: 'power3.out',
+            stagger: 0.08,
+            scrollTrigger: {
+              trigger: rootRef.current,
+              start: 'top 80%'
+            }
           }
-        }
-      )
+        )
+      }
 
-      gsap.utils.toArray('.project-card').forEach((card) => {
+      const projectCards = gsap.utils.toArray('.project-card')
+      projectCards.forEach((card) => {
         gsap.fromTo(
           card,
           { y: 50, opacity: 0 },
