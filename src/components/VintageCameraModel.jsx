@@ -41,7 +41,7 @@ function VintageCameraModel() {
     }
 
     const loader = new GLTFLoader()
-    loader.load('/vintage_camera/scene.gltf', (gltf) => {
+    loader.load(`${import.meta.env.BASE_URL}vintage_camera/scene.gltf`, (gltf) => {
       const model = gltf.scene
       const bounds = new THREE.Box3().setFromObject(model)
       const center = bounds.getCenter(new THREE.Vector3())

@@ -41,7 +41,7 @@ function ComputerModel() {
     }
 
     const loader = new GLTFLoader()
-    loader.load('/ibm_5150/scene.gltf', (gltf) => {
+    loader.load(`${import.meta.env.BASE_URL}ibm_5150/scene.gltf`, (gltf) => {
       const model = gltf.scene
       const bounds = new THREE.Box3().setFromObject(model)
       const center = bounds.getCenter(new THREE.Vector3())

@@ -11,7 +11,7 @@ function HomePage() {
       <section className="hero-section">
         <div className="hero-image-wrap">
           <img
-            src="/backgroud.jpg"
+            src={`${import.meta.env.BASE_URL}backgroud.jpg`}
             alt="Kathmandu Valley beneath the Himalayan mountains"
             className="hero-image"
             loading="eager"
