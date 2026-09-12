@@ -5,13 +5,13 @@ const withBaseUrl = (path) => {
     return path
   }
 
-  const baseUrl = import.meta.env.BASE_URL
+  const base = import.meta.env.BASE_URL || '/'
 
-  if (path.startsWith(baseUrl)) {
-    return path
-  }
-
-  return `${baseUrl}${path.replace(/^\/+/, '')}`
+  return `${base}${path
+    .replace(/^\/+/, '')
+    .split('/')
+    .map(encodeURIComponent)
+    .join('/')}`
 }
 
 const projectData = [
@@ -29,7 +29,12 @@ const projectData = [
     externalUrl: 'https://glam-by-madhusa.vercel.app/',
     gallery: [],
     technologies: ['React', 'Interface Design', 'Frontend Development'],
-    credits: [{ label: 'Role', value: 'Frontend Developer' }]
+    credits: [
+      {
+        label: 'Role',
+        value: 'Frontend Developer'
+      }
+    ]
   },
 
   {
@@ -46,7 +51,12 @@ const projectData = [
     externalUrl: 'https://aroco-fitness.vercel.app/',
     gallery: [],
     technologies: ['React', 'UX Design', 'Frontend Development'],
-    credits: [{ label: 'Role', value: 'Frontend Developer' }]
+    credits: [
+      {
+        label: 'Role',
+        value: 'Frontend Developer'
+      }
+    ]
   },
 
   {
@@ -74,8 +84,17 @@ const projectData = [
       'sailesh weds rusha/sailesh weds rusha (7).jpg',
       'sailesh weds rusha/sailesh weds rusha (11).jpg'
     ],
-    technologies: ['Photography', 'Wedding', 'Visual Storytelling'],
-    credits: [{ label: 'Role', value: 'Photographer' }]
+    technologies: [
+      'Photography',
+      'Wedding',
+      'Visual Storytelling'
+    ],
+    credits: [
+      {
+        label: 'Role',
+        value: 'Photographer'
+      }
+    ]
   },
 
   {
@@ -89,15 +108,26 @@ const projectData = [
     description:
       'A street photography series observing light, people and the small scenes that shape a city.',
     image: 'analog/1.JPG',
-    gallery: ['analog/2.JPG'],
+    gallery: [
+      'analog/2.JPG'
+    ],
     landscapeGallery: [
       'analog/3.JPG',
       'analog/4.JPG',
       'analog/5.JPG',
       'analog/6.JPG'
     ],
-    technologies: ['Photography', 'Street', 'Analog'],
-    credits: [{ label: 'Role', value: 'Photographer' }]
+    technologies: [
+      'Photography',
+      'Street',
+      'Analog'
+    ],
+    credits: [
+      {
+        label: 'Role',
+        value: 'Photographer'
+      }
+    ]
   },
 
   {
@@ -125,8 +155,17 @@ const projectData = [
       'bhaktapur/10.jpg',
       'bhaktapur/11.jpg'
     ],
-    technologies: ['Photography', 'Street', 'Documentary'],
-    credits: [{ label: 'Role', value: 'Photographer' }]
+    technologies: [
+      'Photography',
+      'Street',
+      'Documentary'
+    ],
+    credits: [
+      {
+        label: 'Role',
+        value: 'Photographer'
+      }
+    ]
   },
 
   {
@@ -139,7 +178,9 @@ const projectData = [
       'A quiet documentary about clay, labor, ritual and the rhythm of making.',
     description:
       'A filmic study of clay, process and the hands that turn raw earth into something useful.',
+
     image: 'mato/DSC09487 copy.jpg',
+
     gallery: [
       'mato/_DSC6510.jpg',
       'mato/_DSC6515.jpg',
@@ -153,9 +194,23 @@ const projectData = [
       'mato/_DSC7998.jpg',
       'mato/_DSC8106.jpg'
     ],
-    landscapeGallery: ['mato/_DSC7928.jpg'],
-    technologies: ['Photography', 'Videography', 'Editing'],
-    credits: [{ label: 'Role', value: 'Videographer / Editor' }]
+
+    landscapeGallery: [
+      'mato/_DSC7928.jpg'
+    ],
+
+    technologies: [
+      'Photography',
+      'Videography',
+      'Editing'
+    ],
+
+    credits: [
+      {
+        label: 'Role',
+        value: 'Videographer / Editor'
+      }
+    ]
   },
 
   {
@@ -168,16 +223,31 @@ const projectData = [
       'A portrait series shaped by place, expression and the feeling of a shared moment.',
     description:
       'An intimate portrait collection made around natural light, honest gestures and a strong sense of place.',
+
     image: 'ashapuri/DSC09575 copy.jpg',
+
     gallery: [
       'ashapuri/_DSC8231 copy.jpg',
       'ashapuri/_DSC8259 copy.jpg',
       'ashapuri/_DSC8267 copy.jpg',
       'ashapuri/_DSC9600.jpg'
     ],
-    landscapeGallery: ['ashapuri/_DSC9593.jpg'],
-    technologies: ['Brand', 'Editor'],
-    credits: [{ label: 'Role', value: 'Photographer' }]
+
+    landscapeGallery: [
+      'ashapuri/_DSC9593.jpg'
+    ],
+
+    technologies: [
+      'Brand',
+      'Editor'
+    ],
+
+    credits: [
+      {
+        label: 'Role',
+        value: 'Photographer'
+      }
+    ]
   },
 
   {
@@ -190,7 +260,9 @@ const projectData = [
       'A documentary series shaped by ritual, place and the people who keep culture moving.',
     description:
       'A cultural photography collection observing tradition, community and the details that give each place its character.',
+
     image: 'culture/DSC_1764.jpg',
+
     gallery: [
       'culture/DSC_1773.jpg',
       'culture/DSC_1781.jpg',
@@ -205,8 +277,19 @@ const projectData = [
       'culture/DSC_8834.jpg',
       'culture/DSC_8859.jpg'
     ],
-    technologies: ['Photography', 'Culture', 'Documentary'],
-    credits: [{ label: 'Role', value: 'Photographer' }]
+
+    technologies: [
+      'Photography',
+      'Culture',
+      'Documentary'
+    ],
+
+    credits: [
+      {
+        label: 'Role',
+        value: 'Photographer'
+      }
+    ]
   },
 
   {
@@ -219,7 +302,9 @@ const projectData = [
       'A celebration captured through family, ceremony and the energy of a wedding day.',
     description:
       'A wedding photography collection focused on candid emotion, traditional details and joyful celebration.',
+
     image: 'sanish weds shahista/sanish weds shahista (1).jpg',
+
     gallery: [
       'sanish weds shahista/sanish weds shahista (2).jpg',
       'sanish weds shahista/sanish weds shahista (4).jpg',
@@ -227,20 +312,39 @@ const projectData = [
       'sanish weds shahista/sanish weds shahista (6).jpg',
       'sanish weds shahista/sanish weds shahista (7).jpg'
     ],
+
     landscapeGallery: [
       'sanish weds shahista/sanish weds shahista (3).jpg',
       'sanish weds shahista/sanish weds shahista (8).jpg'
     ],
-    technologies: ['Photography', 'Wedding', 'Visual Storytelling'],
-    credits: [{ label: 'Role', value: 'Photographer' }]
+
+    technologies: [
+      'Photography',
+      'Wedding',
+      'Visual Storytelling'
+    ],
+
+    credits: [
+      {
+        label: 'Role',
+        value: 'Photographer'
+      }
+    ]
   }
 ]
 
 export const projects = projectData.map((project) => ({
   ...project,
+
   image: withBaseUrl(project.image),
-  gallery: project.gallery.map(withBaseUrl),
-  landscapeGallery: project.landscapeGallery?.map(withBaseUrl)
+
+  gallery: Array.isArray(project.gallery)
+    ? project.gallery.map(withBaseUrl)
+    : [],
+
+  landscapeGallery: Array.isArray(project.landscapeGallery)
+    ? project.landscapeGallery.map(withBaseUrl)
+    : []
 }))
 
 export const disciplines = [
