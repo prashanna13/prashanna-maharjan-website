@@ -17,7 +17,7 @@ function Sidebar({ onNavigate }) {
           <NavLink to="/homepage" onClick={onNavigate}>Home</NavLink>
           <NavLink to="/about" onClick={onNavigate}>About</NavLink>
           <NavLink to="/contact" onClick={onNavigate}>Contact</NavLink>
-          <a href="/cv.pdf" download onClick={onNavigate}>Download CV</a>
+          <a href={`${import.meta.env.BASE_URL}cv.pdf`} download onClick={onNavigate}>Download CV</a>
         </nav>
 
         <div className="sidebar-meta">
