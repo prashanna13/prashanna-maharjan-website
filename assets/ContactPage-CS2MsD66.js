@@ -1,4 +1,4 @@
-import{a as e,o as t,t as n}from"./index-BlapRPmG.js";/* empty css                    */import{I as r,J as i,K as a,c as o,ft as s,it as c,nt as l,pt as u,rt as d,t as f}from"./three.module-BCat0h2u.js";var p=t(e(),1),m=n(),h=8,g=`
+import{a as e,o as t,t as n}from"./index-CwIAWw2-.js";/* empty css                    */import{I as r,J as i,K as a,c as o,ft as s,it as c,nt as l,pt as u,rt as d,t as f}from"./three.module-BCat0h2u.js";var p=t(e(),1),m=n(),h=8,g=`
 #define MAX_COLORS ${h}
 uniform vec2 uCanvas;
 uniform float uTime;
