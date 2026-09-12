@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -7,13 +7,13 @@ import './App.css'
 import LoadingScreen from './components/LoadingScreen'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
-const SelectedWorkPage = lazy(() => import('./pages/SelectedWorkPage'))
-const HomePage = lazy(() => import('./pages/HomePage'))
-const AboutPage = lazy(() => import('./pages/AboutPage'))
-const ContactPage = lazy(() => import('./pages/ContactPage'))
-const ProjectPage = lazy(() => import('./pages/ProjectPage'))
-const LegalPage = lazy(() => import('./pages/LegalPage'))
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+import SelectedWorkPage from './pages/SelectedWorkPage'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
+import ProjectPage from './pages/ProjectPage'
+import LegalPage from './pages/LegalPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -128,19 +128,17 @@ function PortfolioShell() {
 
       <Sidebar onNavigate={() => setSidebarOpen(false)} />
       <main className="page-shell">
-        <Suspense fallback={<LoadingScreen />}>
-          <Routes>
-            <Route path="/" element={<SelectedWorkPage />} />
-            <Route path="/homepage" element={<HomePage />} />
-            <Route path="/work" element={<Navigate to="/homepage" replace />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/projects/:slug" element={<ProjectPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/privacy-policy" element={<LegalPage />} />
-            <Route path="/terms" element={<LegalPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<SelectedWorkPage />} />
+          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/work" element={<Navigate to="/homepage" replace />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects/:slug" element={<ProjectPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<LegalPage />} />
+          <Route path="/terms" element={<LegalPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
       {location.pathname !== '/' ? <Footer /> : null}
     </div>
