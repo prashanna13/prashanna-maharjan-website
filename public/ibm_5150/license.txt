@@ -1,0 +1,8 @@
+Model Information:
+* title:	IBM 5150
+* source:	https://sketchfab.com/3d-models/ibm-5150-986cafe13c144d0893a405863756f341
+* author:	DoZ84 (https://sketchfab.com/DoZ84)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

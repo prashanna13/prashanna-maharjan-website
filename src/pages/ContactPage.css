@@ -1,0 +1,100 @@
+.contact-color-bends {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.46;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.7rem;
+  margin: 3rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-form label {
+  margin-top: 0.8rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.64rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  outline: 0;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--ivory);
+  resize: vertical;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-form select {
+  appearance: none;
+  cursor: pointer;
+  background-color: var(--charcoal);
+  color-scheme: dark;
+}
+
+.contact-form select option {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.contact-form select:invalid {
+  color: var(--warm);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-form-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.contact-form button {
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  padding: 0.85rem 1.2rem;
+  background: var(--gold);
+  color: var(--obsidian);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.64rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-form button:hover:not(:disabled) {
+  background: transparent;
+  color: var(--ivory);
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.contact-form-status {
+  color: var(--warm);
+  font-size: 0.72rem;
+}
+
+.contact-page-links {
+  margin-top: 2.5rem;
+}

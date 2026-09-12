@@ -1,0 +1,271 @@
+.selected-work-page {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--obsidian);
+  background-image: linear-gradient(rgba(242, 239, 232, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 239, 232, 0.055) 1px, transparent 1px);
+  background-size: 72px 72px;
+  cursor: default;
+  user-select: none;
+  touch-action: none;
+}
+
+.selected-work-page.is-panning {
+  cursor: grabbing;
+}
+
+.selected-work-page:not(.is-panning) {
+  cursor: grab;
+}
+
+.selected-work-page::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, rgba(198, 161, 91, 0.08), transparent 38%);
+  content: '';
+  pointer-events: none;
+}
+
+.selected-work-intro {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.selected-work-intro .eyebrow {
+  margin-bottom: 1rem;
+}
+
+.selected-work-intro h1 {
+  margin: 0;
+  color: var(--ivory);
+  font-size: clamp(2.6rem, 6vw, 6.5rem);
+  line-height: 0.84;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+}
+
+.canvas-instructions {
+  margin: 1.5rem 0 0;
+  color: var(--warm);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.canvas-status {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--warm);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.canvas-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 5px rgba(198, 161, 91, 0.12);
+}
+
+.project-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2400px;
+  height: 1900px;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.project-card {
+  position: absolute;
+  display: block;
+  width: 470px;
+  height: 318px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transform: translateZ(0);
+}
+
+.project-folder-tab {
+  position: absolute;
+  z-index: 2;
+  top: -1px;
+  left: 1rem;
+  width: 4.5rem;
+  height: 0.55rem;
+  background: var(--warm);
+  clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%);
+  opacity: 0.9;
+}
+
+.project-1 { top: 650px; left: 180px; }
+.project-2 { top: 450px; left: 700px; }
+.project-3 { top: 500px; left: 1150px; }
+.project-4 { top: 500px; left: 1850px; }
+.project-5 { top: 1150px; left: 150px; }
+.project-6 { top: 1150px; left: 700px; }
+.project-7 { top: 1200px; left: 1300px; }
+.project-8 { top: 1000px; left: 1850px; }
+
+.project-card::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(11, 11, 11, 0.82));
+  content: '';
+  pointer-events: none;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease, filter 0.7s ease;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.project-card:hover img {
+  transform: none;
+  filter: grayscale(0) contrast(1.05);
+}
+
+.project-card:hover {
+  border-color: rgba(198, 161, 91, 0.78);
+}
+
+.project-card .project-meta {
+  position: absolute;
+  inset: auto 1rem 1rem 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--ivory);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+}
+
+.project-card strong {
+  font-size: 1.4rem;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 961px) {
+  .selected-work-page {
+    min-height: 991px;
+    height: 991px;
+  }
+
+  .project-canvas {
+    width: 1920px;
+    height: 991px;
+  }
+
+  .selected-work-intro {
+    max-width: 360px;
+  }
+
+  .project-1 { top: 0; left: 820px; }
+  .project-2 { top: 672px; left: 820px; }
+  .project-3 { top: 120px; left: 1320px; }
+  .project-4 { top: 336px; left: 1820px; }
+  .project-5 { top: 336px; left: 820px; }
+  .project-6 { top: 500px; left: 320px; }
+  .project-7 { top: 500px; left: -180px; }
+  .project-8 { top: 120px; left: 320px; }
+  .project-9 { top: 500px; left: 1320px; }
+}
+
+@media (max-width: 960px) {
+  .project-card {
+    width: 280px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 640px) {
+  .selected-work-page {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+    padding: 1.25rem;
+    touch-action: auto;
+  }
+
+  .selected-work-intro {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .selected-work-intro h1 {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+
+  .canvas-instructions {
+    margin-top: 1rem;
+    font-size: 0.58rem;
+  }
+
+  .canvas-status {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 2rem 0 1rem;
+  }
+
+  .project-canvas {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
+  .project-card,
+  .project-1,
+  .project-2,
+  .project-3,
+  .project-4,
+  .project-5,
+  .project-6,
+  .project-7,
+  .project-8,
+  .project-9 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-card strong {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+  }
+}
