@@ -224,12 +224,12 @@ const projectData = [
     description:
       'An intimate portrait collection made around natural light, honest gestures and a strong sense of place.',
 
-    image: 'ashapuri/DSC09575 copy.jpg',
+    image: 'ashapuri/DSC09575.jpg',
 
     gallery: [
-      'ashapuri/_DSC8231 copy.jpg',
-      'ashapuri/_DSC8259 copy.jpg',
-      'ashapuri/_DSC8267 copy.jpg',
+      'ashapuri/_DSC8231.jpg',
+      'ashapuri/_DSC8259.jpg',
+      'ashapuri/_DSC8267.jpg',
       'ashapuri/_DSC9600.jpg'
     ],
 
